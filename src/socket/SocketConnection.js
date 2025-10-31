@@ -28,7 +28,7 @@ const useSocket = () => {
         isReady,
         sendMessage: (message) => {
             if (ws.current && ws.current.readyState === WebSocket.OPEN) {
-                ws.current.send(message);
+                ws.current.send(JSON.stringify(message));
             }
         },
         close: () => {
