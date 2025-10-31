@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 const useSocket = () => {
     const ws = useRef(null);
     const [isReady, setIsReady] = useState(false);
+    const [val, setVal] = useState(0);
     useEffect(() => {
         const socket = new WebSocket("wss://prices.algotest.xyz/mock/updates");
 
@@ -12,6 +13,7 @@ const useSocket = () => {
         socket.onmessage = (event) => {
             const data = JSON.parse(event.data);
             console.log(data);
+            setVal(data);
         };
 
         ws.current = socket;
@@ -36,3 +38,5 @@ const useSocket = () => {
         }
     }
 }
+
+export default useSocket;
