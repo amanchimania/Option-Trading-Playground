@@ -1,9 +1,9 @@
-import React, { useEffect } from 'react'
+import { useEffect } from 'react'
 import './App.css'
-import useSocket from './socket/SocketConnection';
+import useSocket from "./socket/SocketConnection";
 
 function App() {
-  const { isReady, sendMessage, close } = useSocket();
+  const { isReady, sendMessage } = useSocket();
 
   useEffect(() => {
     if (isReady) {
