@@ -26,6 +26,19 @@ function App() {
   return (
     <>
       <h1>Hello World</h1>
+      <button onClick={() => sendMessage({
+        msg : {
+          type: 'subscribe',
+          datatypes:['ltp'],
+          underlyings: [
+            {
+              underlying: 'BANKNIFTY',
+              cash: true,
+              options: ['2025-12-20'],
+            }
+          ]
+        }
+      })}>Subscribe</button>
     </>
   )
 }
