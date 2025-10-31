@@ -7,7 +7,19 @@ function App() {
 
   useEffect(() => {
     if (isReady) {
-      // sendMessage("Hello, server!");
+      sendMessage({
+        msg : {
+          type: 'subscribe',
+          datatypes:['ltp'],
+          underlyings: [
+            {
+              underlying: 'BANKNIFTY',
+              cash: true,
+              options: ['2025-12-20'],
+            }
+          ]
+        }
+      });
     }
   }, [isReady, sendMessage]);
 
