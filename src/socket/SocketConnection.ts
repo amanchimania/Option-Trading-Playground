@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react";
 const useSocket = () => {
     const ws = useRef<WebSocket | null>(null);
     const [isReady, setIsReady] = useState(false);
-    const [val, setVal] = useState<any>(null);
+    const [val, setVal] = useState<any>(null); 
     useEffect(() => {
         const socket = new WebSocket("wss://prices.algotest.xyz/mock/updates");
 
